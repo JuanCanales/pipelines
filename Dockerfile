@@ -44,15 +44,15 @@ ENV PATH $PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
 ENV CRYPTOGRAPHY_DONT_BUILD_RUST 1
 
 # ---- Install pyenv
-RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer \
-  -o pyenv-installer && \
-  /bin/bash pyenv-installer && \
-  rm pyenv-installer
+#RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer \
+#  -o pyenv-installer && \
+#  /bin/bash pyenv-installer && \
+#  rm pyenv-installer
   
 # ---- Install Python
-RUN pyenv install $PYTHON_VERSION
-RUN pyenv global $PYTHON_VERSION
-RUN pyenv rehash
+#RUN pyenv install $PYTHON_VERSION
+#RUN pyenv global $PYTHON_VERSION
+#RUN pyenv rehash
 
 # ---- Install the application
 RUN make install
