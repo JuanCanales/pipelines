@@ -55,7 +55,10 @@ ENV CRYPTOGRAPHY_DONT_BUILD_RUST 1
 #RUN pyenv rehash
 
 # ---- Install the application
-RUN make install
+#RUN make install
+
+# ---- Install the application
+COPY .
 
 # ---- Remove Alpine packages not needed at runtime
 USER root
@@ -66,4 +69,5 @@ RUN apk del \
 USER appuser
 
 # Change this to start your application
-CMD ["python", "-m", "your module"]
+# CMD ["python", "-m", "your module"]
+CMD ["java", "-m", "app.jar"]
