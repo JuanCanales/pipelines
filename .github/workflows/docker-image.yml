@@ -6,11 +6,15 @@
 name: Docker Image
 
 on:
-  workflow_dispatch
-
-env:
-  IMAGE_NAME : "mercatus"
-  VERSION : "v0.1"
+  workflow_dispatch :
+    inputs:
+      version:
+        description: 'Version number'     
+        required: true
+        
+      image-name:
+        description: 'Image name'     
+        required: true
 
 jobs:
 
@@ -21,4 +25,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${inputs.image-name}${inputs.version}:$(date +%s)
