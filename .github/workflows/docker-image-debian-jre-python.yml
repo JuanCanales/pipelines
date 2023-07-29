@@ -2,7 +2,7 @@
 # Uploading to docker-hub
 # Workflow must be launched manually
 
-name: Docker Image CI
+name: Docker Image - Debian + JRE + Python
 
 on:
   workflow_dispatch
