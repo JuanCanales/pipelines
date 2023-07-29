@@ -1,3 +1,5 @@
+#Openjdk Alpine 18 + Python 3.9.12
+
 # ---- OpenJDK image
 FROM openjdk:18-jdk-alpine AS base
 
