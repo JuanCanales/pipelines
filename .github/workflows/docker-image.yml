@@ -1,3 +1,6 @@
+# Create a Docker image with : Debian + JRE + python
+# Workflow must be launched manually
+
 name: Docker Image CI
 
 on:
