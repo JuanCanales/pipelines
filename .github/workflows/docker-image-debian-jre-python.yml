@@ -1,8 +1,9 @@
-# Build a Docker image with : Debian + JRE + python
+# Build a Docker image with Dockerfile in root of repo
 # Uploading to docker-hub
-# Workflow must be launched manually
 
-name: Docker Image - Debian + JRE + Python
+# This workflow must be launched manually
+
+name: Docker Image
 
 on:
   workflow_dispatch
