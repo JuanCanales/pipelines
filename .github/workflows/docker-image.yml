@@ -25,4 +25,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${inputs.image-name}${inputs.version}:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{github.event.inputs.image-name}}:$(date +%s)
