@@ -1,10 +1,15 @@
-# Create a Docker image with : Debian + JRE + python
+# Build a Docker image with : Debian + JRE + python
+# Uploading to docker-hub
 # Workflow must be launched manually
 
 name: Docker Image CI
 
 on:
   workflow_dispatch
+
+env:
+  IMAGE_NAME : "mercatus"
+  VERSION : "v0.1"
 
 jobs:
 
