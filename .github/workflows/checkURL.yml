@@ -3,7 +3,7 @@ name: checkURL
 
 on:
   schedule:
-    - cron: '* * * * *' # At every minute (every minute, every hour, every day, every month, every weekday)
+    - cron: '0 0 * * *' # (minute 0, hour 0, every day, every month, every weekday)
 
 jobs:
   build:
