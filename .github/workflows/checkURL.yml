@@ -2,6 +2,7 @@
 name: checkURL
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' # (minute 0, hour 0, every day, every month, every weekday)
 
