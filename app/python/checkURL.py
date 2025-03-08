@@ -77,7 +77,7 @@ def main():
                 # Datos para enviar el correo
                 destinatario = "juanluiscc@gmail.com"
                 asunto = "URL Down"
-                mensaje = "URL DOWN  ( URL :{url}   Status:{status})"
+                mensaje = f"URL DOWN  ( URL :{url}   Status:{status})"
             
             
     
@@ -91,7 +91,7 @@ def main():
             # Datos para enviar el correo
             destinatario = "juanluiscc@gmail.com"
             asunto = "URL Down"
-            mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
+            mensaje = f"URL DOWN  ( URL :{url}   HTTP Status :{status} )"
             
             # Llamar a la función para enviar el correo
             enviar_email(origen, destinatario, asunto, mensaje, APIKEY, SECRETKEY)
