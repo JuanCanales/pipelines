@@ -43,7 +43,7 @@ def main():
     print("Programa principal.")
 
     # Verificar si se pasaron los parametros
-    print("Parameters received : " {sys.argv})
+    print(f"Parameters received :  {sys.argv}")
     if len(sys.argv) > 3:
         url = sys.argv[1]
         print(f"URL to be checked: {url}")
