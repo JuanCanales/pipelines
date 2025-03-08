@@ -28,4 +28,4 @@ jobs:
          # python -m pip install --upgrade pip
          # pip install -r ./requirements.txt
           echo "Executing script"
-          python3 ./app/python/checkURL2.py ${{ github.event.inputs.url }}
+          python3 ./app/python/checkURL2.py ${{github.event.inputs.url}} ${{secrets.SMTP_APIKEY}} ${{secrets.SMTP_SECRETKEY}}
