@@ -8,6 +8,7 @@ on:
         description : URL to be checked
         required : true
         default : "http://www.google.com"
+        # URL de test error : https://auth.hostinger.com/dksldfls
   schedule:
     - cron: '0 0 * * *' # (minute 0, hour 0, every day, every month, every weekday)
 
