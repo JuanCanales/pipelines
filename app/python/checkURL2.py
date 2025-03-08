@@ -14,34 +14,45 @@ if len(sys.argv) > 3:
 
     APIKEY = sys.argv[2]
     SECRETKEY = sys.argv[3]
+    try:
+        # Haciendo la solicitud GET
+        response = urllib.request.urlopen(url)
 
-    # Haciendo la solicitud GET
-    response = urllib.request.urlopen(url)
+        # Leyendo la respuesta y decodificándola
+        html = response.read().decode('utf-8')
 
-    # Leyendo la respuesta y decodificándola
-    html = response.read().decode('utf-8')
+        # Mostrando el contenido
+        print(html)
 
-    # Mostrando el contenido
-    print(html)
+        status = response.getcode()
+        # Si quieres obtener solo el código de estado HTTP
+        print(f"HTTP status code: {status}")
 
-    status = response.getcode()
-    # Si quieres obtener solo el código de estado HTTP
-    print(f"HTTP status code: {status}")
+        if status == 200:
+            print(f"URL UP")
+        else:
+            print(f"URL DOWN  ( {status} )")
+        
+            # Datos para enviar el correo
+            destinatario = "juanluiscc@gmail.com"
+            asunto = "URL Down"
+            mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
+        
+        
 
-    if status == 200:
-        print(f"URL UP")
-    else:
-        print(f"URL DOWN  ( {status} )")
+            # Llamar a la función para enviar el correo
+            enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY)
+            
+    except Exception as e:
+        print(f"Error getting the URL: {e}")
+
         # Datos para enviar el correo
         destinatario = "juanluiscc@gmail.com"
         asunto = "URL Down"
         mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
         
-        
-
         # Llamar a la función para enviar el correo
         enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY)
-
 else:
     print("Not received url.")
 
