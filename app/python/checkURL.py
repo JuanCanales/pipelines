@@ -91,6 +91,7 @@ def main():
             # Datos para enviar el correo
             destinatario = "juanluiscc@gmail.com"
             asunto = "URL Down"
+            status = response.getcode()
             mensaje = f"URL DOWN  ( URL :{url}   HTTP Status :{status} )"
             
             # Llamar a la función para enviar el correo
