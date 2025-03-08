@@ -1,3 +1,5 @@
+# Chequea una URL y si da algun tipo de error envia un email con origen y destino el email juanluiscc@gmail.com
+
 import urllib.request
 import sys
 import smtplib
