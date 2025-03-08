@@ -23,4 +23,4 @@ jobs:
          # python -m pip install --upgrade pip
          # pip install -r ./requirements.txt
           echo "Ejecutando script"
-          python ./app/python/checkURL.py
+          python ./app/python/checkURL2.py
