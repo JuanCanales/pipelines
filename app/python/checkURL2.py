@@ -75,7 +75,7 @@ if len(sys.argv) > 3:
         
 
             # Llamar a la función para enviar el correo
-            enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY)
+            enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
             
     except Exception as e:
         print(f"Error getting the URL: {e}")
@@ -86,7 +86,7 @@ if len(sys.argv) > 3:
         mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
         
         # Llamar a la función para enviar el correo
-        enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY)
+        enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
 else:
     print("Not received url.")
 
