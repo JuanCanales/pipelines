@@ -39,56 +39,64 @@ def enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY):
 
 
 
+def main():
+    print("Programa principal.")
 
-
-# Verificar si se pasaron los parametros
-if len(sys.argv) > 3:
-    url = sys.argv[1]
-    print(f"URL to be checked: {url}")
-
-    APIKEY = sys.argv[2]
-    SECRETKEY = sys.argv[3]
-    try:
-        # Haciendo la solicitud GET
-        response = urllib.request.urlopen(url)
-
-        # Leyendo la respuesta y decodificándola
-        html = response.read().decode('utf-8')
-
-        # Mostrando el contenido
-        print(html)
-
-        status = response.getcode()
-        # Si quieres obtener solo el código de estado HTTP
-        print(f"HTTP status code: {status}")
-
-        if status == 200:
-            print(f"URL UP")
-        else:
-            print(f"URL DOWN  ( {status} )")
-        
+    # Verificar si se pasaron los parametros
+    print("Parameters received : " {sys.argv})
+    if len(sys.argv) > 3:
+        url = sys.argv[1]
+        print(f"URL to be checked: {url}")
+    
+        APIKEY = sys.argv[2]
+        SECRETKEY = sys.argv[3]
+        try:
+            # Haciendo la solicitud GET
+            print("Url open... ")
+            response = urllib.request.urlopen(url)
+    
+            # Leyendo la respuesta y decodificándola
+            print("Reading response... ")
+            html = response.read().decode('utf-8')
+    
+            # Mostrando el contenido
+            print(html)
+    
+            status = response.getcode()
+            # Si quieres obtener solo el código de estado HTTP
+            print(f"HTTP status code: {status}")
+    
+            if status == 200:
+                print(f"URL UP")
+            else:
+                print(f"URL DOWN  ( {status} )")
+            
+                # Datos para enviar el correo
+                destinatario = "juanluiscc@gmail.com"
+                asunto = "URL Down"
+                mensaje = "URL DOWN  ( URL :{url} )"
+            
+            
+    
+                # Llamar a la función para enviar el correo
+                print("Sending email... ")
+                enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
+                
+        except Exception as e:
+            print(f"Error getting the URL: {e}")
+    
             # Datos para enviar el correo
             destinatario = "juanluiscc@gmail.com"
             asunto = "URL Down"
-            mensaje = "URL DOWN  ( URL :{url} )"
-        
-        
-
+            mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
+            
             # Llamar a la función para enviar el correo
             enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
-            
-    except Exception as e:
-        print(f"Error getting the URL: {e}")
-
-        # Datos para enviar el correo
-        destinatario = "juanluiscc@gmail.com"
-        asunto = "URL Down"
-        mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
-        
-        # Llamar a la función para enviar el correo
-        enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
-else:
-    print("Not received url.")
+    else:
+        print("Not received url.")
 
 
+
+if __name__ == "__main__":
+    main()
 
