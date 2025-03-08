@@ -77,7 +77,7 @@ def main():
                 # Datos para enviar el correo
                 destinatario = "juanluiscc@gmail.com"
                 asunto = "URL Down"
-                mensaje = "URL DOWN  ( URL :{url} )"
+                mensaje = "URL DOWN  ( URL :{url}   Status:{status})"
             
             
     
