@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 # Argumentos de este script : URL + APIKEY + SECRETKEY
 # APIKEY y SECRETKEY del smtp server
 
-
+# URL de test error : https://auth.hostinger.com/dksldfls
 
 # Configuración del correo
 def enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY):
