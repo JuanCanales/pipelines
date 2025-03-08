@@ -31,7 +31,7 @@ if len(sys.argv) > 3:
     if status == 200:
         print(f"URL UP")
     else:
-         print(f"URL DOWN  ( {status} )"
+         print(f"URL DOWN  ( {status} ))"
         # Datos para enviar el correo
         destinatario = "juanluiscc@gmail.com"
         asunto = "URL Down"
