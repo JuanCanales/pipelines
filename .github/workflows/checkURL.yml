@@ -1,5 +1,5 @@
 # Check URLs
-name: checkURL2
+name: checkURL
 
 on:
   workflow_dispatch:
