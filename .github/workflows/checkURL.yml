@@ -4,8 +4,8 @@ name: checkURL2
 on:
   workflow_dispatch:
     inputs:
-      URL :
-        description : Url to be checked
+      url :
+        description : URL to be checked
         required : true
         default : "www.google.com"
   schedule:
@@ -28,4 +28,4 @@ jobs:
          # python -m pip install --upgrade pip
          # pip install -r ./requirements.txt
           echo "Executing script"
-          python ./app/python/checkURL2.py
+          python3 ./app/python/checkURL2.py ${{ github.event.inputs.url }}
