@@ -18,7 +18,7 @@ def enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY):
 
         # Crear el mensaje
         msg = MIMEMultipart()
-        msg["From"] = remitente
+        msg["From"] = APIKEY
         msg["To"] = destinatario
         msg["Subject"] = asunto
 
