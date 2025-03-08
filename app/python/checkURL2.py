@@ -10,7 +10,7 @@ from email.mime.multipart import MIMEMultipart
 # URL de test error : https://auth.hostinger.com/dksldfls
 
 # Configuración del correo
-def enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY):
+def enviar_email(origen, destinatario, asunto, mensaje, APIKEY, SECRETKEY):
     try:
         # Servidor SMTP de Gmail
         servidor_smtp = "in-v3.mailjet.com"
@@ -18,7 +18,7 @@ def enviar_email(destinatario, asunto, mensaje, APIKEY, SECRETKEY):
 
         # Crear el mensaje
         msg = MIMEMultipart()
-        msg["From"] = APIKEY
+        msg["From"] = origen
         msg["To"] = destinatario
         msg["Subject"] = asunto
 
@@ -50,6 +50,7 @@ def main():
     
         APIKEY = sys.argv[2]
         SECRETKEY = sys.argv[3]
+        origen = "juanluiscc@gmail.com"
         try:
             # Haciendo la solicitud GET
             print("Url open... ")
@@ -80,7 +81,7 @@ def main():
     
                 # Llamar a la función para enviar el correo
                 print("Sending email... ")
-                enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
+                enviar_email(origen, destinatario, asunto, mensaje, APIKEY, SECRETKEY)
                 
         except Exception as e:
             print(f"Error getting the URL: {e}")
@@ -91,7 +92,7 @@ def main():
             mensaje = "URL DOWN  ( URL :{url}   HTTP Status :{status} )"
             
             # Llamar a la función para enviar el correo
-            enviar_email(destinatario, asunto, mensaje, destinatario, SECRETKEY)
+            enviar_email(origen, destinatario, asunto, mensaje, APIKEY, SECRETKEY)
     else:
         print("Not received url.")
 
