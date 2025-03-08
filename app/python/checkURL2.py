@@ -62,7 +62,7 @@ if len(sys.argv) > 1:
         destinatario = "juanluiscc@gmail.com"
         asunto = "URL Down"
         mensaje = "URL DOWN  ( {status} )"
-        contraseña = "50b7e929159b0ac52e58e0d63ad3c17a"
+        
         
 
         # Llamar a la función para enviar el correo
